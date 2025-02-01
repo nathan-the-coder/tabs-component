@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tabs Component</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+        <div class="tabs">
+            <button id="content1" class="active">First Tab</button>
+            <button id="content2">Second Tab</button>
+            <button id="content3">Third Tab</button>
+            <button id="content4">Fourth Tab</button>
+        </div>
+
+        <p>Clicking each tab should hide the content of the other tab and show the content of clicked tab. By default, enable the first tab.</p>
+
+        <div class="contents">
+            <div id='tcontent1' class="active">
+                <p>First Tab content to be displayed here.</p>
+            </div>
+            <div id='tcontent2'>
+                <p>Second Tab content to be displayed here.</p>
+            </div>
+            <div id='tcontent3'>
+                <p>Third Tab content to be displayed here.</p>
+            </div>
+            <div id='tcontent4'>
+                <p>Fourth Tab content to be displayed here.</p>
+            </div>
+        </div>
+
+        <p>Add some dummy content or just add a simple text showing the tab </p>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
