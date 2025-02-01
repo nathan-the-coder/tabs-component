@@ -1,55 +1,81 @@
-  body {
-      font-family: Arial, Helvetica, sans-serif;
-  }
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0; /* Remove default body margin */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    min-height: 100vh; /* Ensure full viewport height */
+}
 
-  .app {
-      display: flex;
-      flex-direction: column;
-      margin: 0 auto;
-      margin-top: 8em;
-      border: 2px solid black;
-      border-radius: 10px;
-      width: 35em;
-      height: 19em;
-      padding: 20px;
-  }
+.app {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 35em; /* Or a percentage for responsiveness */
+    padding: 20px;
+    box-sizing: border-box; /* Include padding in width calculation */
+    background-color: #f0f0f0; /* Light background color */
+}
 
-  .tabs {
-      display: flex;
-      gap: 10px;
-  }
+.tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px; /* Space between tabs and content */
+}
 
-  .tabs button {
-      padding: 10px;
-      border: none;
-      outline: none;
-      background: transparent;
-      color: gray;
-      font-size: medium;
-      cursor: pointer; /* Add cursor pointer for better UX */
-  }
+.tabs button {
+    padding: 10px 15px; /* Adjusted padding */
+    border: none;
+    outline: none;
+    background-color: #e0e0e0; /* Light gray background for tabs */
+    color: gray;
+    font-size: medium;
+    cursor: pointer;
+    border-radius: 5px; /* Rounded corners for tabs */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transitions */
+}
 
-  .tabs button:hover,
-  .tabs button:active {
-      border-bottom: 2px solid black;
-      color: black;
-  }
+.tabs button:hover,
+.tabs button:focus { /* Added :focus for keyboard users */
+    background-color: #d0d0d0; /* Slightly darker on hover/focus */
+    color: black;
+}
 
-  .tabs button.active {
-      border-bottom: 2px solid black;
-      color: black;
-  }
+.tabs button.active {
+    background-color: #fff; /* White background for active tab */
+    color: black;
+    border-bottom: 2px solid #007bff; /* Blue underline for active tab */
+}
 
-  .contents > div { /* All divs initially hidden */
-      display: none;
-      background: black;
-      color: white;
-      border-radius: 10px;
-      height: 130px;
-      justify-content: center; /* Center content vertically and horizontally */
-      align-items: center;
-  }
+.contents > .tab-pane {
+    display: none;
+    background-color: #fff; /* White background for content area */
+    color: #333;  /* Darker text color for content */
+    border-radius: 10px;
+    padding: 20px; /* Add padding to content area */
+    box-sizing: border-box;
+    min-height: 150px; /* Set a minimum height for content area */
+    border: 1px solid #ccc; /* Add a border to content area */
+}
 
-  .contents > div.active { /* Only active div is displayed */
-      display: flex;
-  }
+.contents > .tab-pane.active {
+    display: block; /* Use block instead of flex for more flexibility */
+}
+
+/* Optional: Style the paragraphs within the content areas */
+.contents p {
+    margin-bottom: 10px; /* Add spacing between paragraphs */
+}
+
+.contents ul {
+    list-style-type: disc; /* Use bullet points for lists */
+    padding-left: 20px; /* Add left padding for lists */
+}
+
+.contents img {
+    max-width: 100%; /* Make images responsive */
+    height: auto;
+    display: block; /* Prevent image from affecting layout */
+    margin: 0 auto; /* Center the image */
+}

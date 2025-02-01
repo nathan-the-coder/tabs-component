@@ -8,27 +8,38 @@
 </head>
 <body>
     <div class="app">
-        <div class="tabs">
-            <button id="content1" class="active">First Tab</button>
-            <button id="content2">Second Tab</button>
-            <button id="content3">Third Tab</button>
-            <button id="content4">Fourth Tab</button>
+        <div class="tabs" role="tablist">
+            <button id="content1" class="active" role="tab" aria-controls="tcontent1" aria-selected="true">First Tab</button>
+            <button id="content2" role="tab" aria-controls="tcontent2" aria-selected="false">Second Tab</button>
+            <button id="content3" role="tab" aria-controls="tcontent3" aria-selected="false">Third Tab</button>
+            <button id="content4" role="tab" aria-controls="tcontent4" aria-selected="false">Fourth Tab</button>
         </div>
 
         <p>Clicking each tab should hide the content of the other tab and show the content of clicked tab. By default, enable the first tab.</p>
 
         <div class="contents">
-            <div id='tcontent1' class="active">
-                <p>First Tab content to be displayed here.</p>
+            <div id='tcontent1' class="active tab-pane" role="tabpanel" aria-labelledby="content1">
+                <p>This is the content for the First Tab.  It can contain text, images, or any other HTML elements.  For example, you could include a list:</p>
+                <ul>
+                    <li>Item 1</li>
+                    <li>Item 2</li>
+                    <li>Item 3</li>
+                </ul>
             </div>
-            <div id='tcontent2'>
-                <p>Second Tab content to be displayed here.</p>
+            <div id='tcontent2' class="tab-pane" role="tabpanel" aria-labelledby="content2">
+                <p>Content for the Second Tab.  This could be a different set of information, perhaps a form:</p>
+                <form>
+                    <input type="text" placeholder="Enter text">
+                    <button type="submit">Submit</button>
+                </form>
             </div>
-            <div id='tcontent3'>
-                <p>Third Tab content to be displayed here.</p>
+            <div id='tcontent3' class="tab-pane" role="tabpanel" aria-labelledby="content3">
+                <p>Third Tab content.  Let's add an image here:</p>
+                <img src="https://picsum.photos/200/300" alt="Placeholder image" width="200">
             </div>
-            <div id='tcontent4'>
-                <p>Fourth Tab content to be displayed here.</p>
+            <div id='tcontent4' class="tab-pane" role="tabpanel" aria-labelledby="content4">
+                <p>Fourth Tab content.  This tab could contain a paragraph with more detailed information:</p>
+                <p>This is a longer paragraph of text that provides additional context or details related to the topic of this tab. You can add as much text as needed here.</p>
             </div>
         </div>
 
